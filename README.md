@@ -1,6 +1,6 @@
 # daru_estate
 
-Daru Estate application.
+The Daru mobile apps are android marketing applications used to promote Daru Housing in Tangerang City. This application was built using the Dart language and the Flutter framework.
 
 ## Getting Started
 
