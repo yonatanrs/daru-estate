@@ -1,0 +1,41 @@
+import '../../misc/load_data_result.dart';
+import '../../misc/processing/future_processing.dart';
+import '../entity/customer/get_customer_based_marketing_id_list_parameter.dart';
+import '../entity/customer/get_customer_based_marketing_id_list_response.dart';
+import '../entity/customer/get_customer_list_parameter.dart';
+import '../entity/customer/get_customer_list_response.dart';
+import '../entity/customer/new_customer_parameter.dart';
+import '../entity/customer/new_customer_response.dart';
+import '../entity/house/get_house_list_parameter.dart';
+import '../entity/house/get_house_list_response.dart';
+import '../entity/login/login_parameter.dart';
+import '../entity/login/login_response.dart';
+import '../entity/marketing/get_marketing_list_parameter.dart';
+import '../entity/marketing/get_marketing_list_response.dart';
+import '../entity/modification/get_modification_list_parameter.dart';
+import '../entity/modification/get_modification_list_response.dart';
+import '../entity/mybill/get_my_bill_parameter.dart';
+import '../entity/mybill/get_my_bill_response.dart';
+import '../entity/mydata/get_my_data_parameter.dart';
+import '../entity/mydata/get_my_data_response.dart';
+import '../entity/payment/get_payment_list_parameter.dart';
+import '../entity/payment/get_payment_list_response.dart';
+import '../entity/scheme/get_scheme_list_parameter.dart';
+import '../entity/scheme/get_scheme_list_response.dart';
+import '../entity/updatedata/update_data_parameter.dart';
+import '../entity/updatedata/update_data_response.dart';
+
+abstract class SourceRepository {
+  FutureProcessing<LoadDataResult<LoginResponse>> login(LoginParameter loginParameter);
+  FutureProcessing<LoadDataResult<GetMarketingListResponse>> getMarketingList(GetMarketingListParameter getMarketingListParameter);
+  FutureProcessing<LoadDataResult<GetCustomerPagingResponse>> getCustomerList(GetCustomerListParameter getCustomerListParameter);
+  FutureProcessing<LoadDataResult<GetModificationListResponse>> getModificationList(GetModificationListParameter getModificationListParameter);
+  FutureProcessing<LoadDataResult<GetSchemeListResponse>> getSchemeList(GetSchemeListParameter getSchemeListParameter);
+  FutureProcessing<LoadDataResult<GetPaymentListResponse>> getPaymentList(GetPaymentListParameter getPaymentListParameter);
+  FutureProcessing<LoadDataResult<GetHouseListResponse>> getHouseList(GetHouseListParameter getHouseListParameter);
+  FutureProcessing<LoadDataResult<GetMyDataResponse>> getMyData(GetMyDataParameter getMyDataParameter);
+  FutureProcessing<LoadDataResult<GetMyBillResponse>> getMyBill(GetMyBillParameter getMyBillParameter);
+  FutureProcessing<LoadDataResult<UpdateDataResponse>> updateData(UpdateDataParameter updateDataParameter);
+  FutureProcessing<LoadDataResult<GetCustomerBasedMarketingIdPagingResponse>> getCustomerBasedMarketingIdList(GetCustomerBasedMarketingIdListParameter getCustomerBasedMarketingIdListParameter);
+  FutureProcessing<LoadDataResult<NewCustomerResponse>> newCustomer(NewCustomerParameter newCustomerParameter);
+}
